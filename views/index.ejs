@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS test</title>
+</head>
+<body>
+    <h1>Enter name</h1>
+    <form method="post">
+        <input name="name" type="text" size="30">
+        <input type="submit" value="Submit">
+    </form>
+    <h4>Existing names:</h4>
+    <ul>
+        <% names.forEach((name) => { %>
+            <li><%- name %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
